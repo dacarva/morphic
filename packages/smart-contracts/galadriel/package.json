@@ -1,8 +1,12 @@
 {
   "name": "galadriel",
   "packageManager": "yarn@4.4.1",
+  "scripts": {
+    "deployQuickstart": "yarn hardhat run scripts/deployQuickstart.ts --network galadriel"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
     "hardhat": "^2.22.9"
   }
 }
