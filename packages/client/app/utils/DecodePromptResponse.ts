@@ -16,6 +16,8 @@ interface PromptResponse {
   }
 }
 export const decodePromptResponse = (response: string | null) : PromptResponse | undefined => {
+  console.log('response in the decode function is ', response);
+  
   const regex = /Intercept:\s*(\d+\.?\d*)\s*Income Coefficient:\s*(\d+\.?\d*)\s*DTI Coefficient:\s*(\d+\.?\d*)\s*Credit History Length Coefficient:\s*(\d+\.?\d*)/;
 
   const matches = response ? response.match(regex) : defaultResponse.match(regex);

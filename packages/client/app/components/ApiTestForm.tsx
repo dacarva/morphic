@@ -46,18 +46,30 @@ export default function ApiTestForm() {
     const data = await res.json()
     console.log(data);
     const stringifiedData = JSON.stringify(data)
-    console.log(stringifiedData);
+    console.log('points are', stringifiedData);
 
     
     //Function to create the prompt for the CHATGPT API
     const newPrompt = promptCreator(stringifiedData);
     console.log('newprompt is ', newPrompt);
     
-
+    //testing Prompt gemini
+    const requestedData = await fetch('/api/promptRequest', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ prompt: newPrompt }),
+    })
+    const dataPrompt = await requestedData.json()
+    console.log('dataPrompt is ', dataPrompt);
+    
+    console.log('dataPrompt.data is ', dataPrompt.data);
+    
     //Funcion to decode the response from the prompt
-    //TODO - instead of null, use the response from the CHATGPT API 
-    const responseValues = decodePromptResponse(null);
+    const responseValues = decodePromptResponse(dataPrompt.data);
     console.log('response with values is', responseValues);
+
   }
 
   return (
