@@ -16,11 +16,11 @@ const format = `
 
 const text3 = 'The dataset is as follows:\n';
 
-// const note = '\n NOTE: avoid to add any code explanation, or code examples, just the requested prompt.';
+const note = "\n Don't give me the steps. Only the required coefficients without **";
 
 export const promptCreator = (stringifiedData: string) : string | undefined => {
   if(!stringifiedData) {
     return undefined;
   }
-  return text1 + structure + text2 + format + text3 + stringifiedData;
+  return text1 + structure + text2 + format + text3 + stringifiedData + note;
 }

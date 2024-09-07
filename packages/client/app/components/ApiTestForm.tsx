@@ -46,7 +46,7 @@ export default function ApiTestForm() {
     const data = await res.json()
     console.log(data);
     const stringifiedData = JSON.stringify(data)
-    console.log(stringifiedData);
+    console.log('points are', stringifiedData);
 
     
     //Function to create the prompt for the CHATGPT API
