@@ -8,15 +8,19 @@ const structure = `{
 }`
 const text2 = '\nI need you to parse this stringified JSON, perform a linear regression on the dataset to predict the creditScore based on the income, dti, and creditHistoryLength, and then provide the coefficients of the regression equation in the following format:\n';
 const format = `
-  Linear Regression Model Coefficients:\n
-  Intercept: {intercept}\n
-  Income Coefficient: {incomeCoefficient}\n
-  DTI Coefficient: {dtiCoefficient}\n
+  Linear Regression Model Coefficients:
+  Intercept: {intercept}
+  Income Coefficient: {incomeCoefficient}
+  DTI Coefficient: {dtiCoefficient}
   Credit History Length Coefficient: {creditHistoryCoefficient}\n`
+
+const text3 = 'The dataset is as follows:\n';
+
+// const note = '\n NOTE: avoid to add any code explanation, or code examples, just the requested prompt.';
 
 export const promptCreator = (stringifiedData: string) : string | undefined => {
   if(!stringifiedData) {
     return undefined;
   }
-  return text1 + structure + text2 + format + stringifiedData;
+  return text1 + structure + text2 + format + text3 + stringifiedData;
 }
