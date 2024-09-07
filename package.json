@@ -6,7 +6,8 @@
   "author": "David Carvajal <david@tropykus.com>",
   "license": "MIT",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/smart-contracts/*"
   ],
   "packageManager": "yarn@4.4.1",
   "devDependencies": {
