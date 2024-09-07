@@ -1,6 +1,8 @@
 'use client'
 
 import { Fragment, useState } from 'react'
+import { promptCreator } from '../utils/PromptCreator'
+import { decodePromptResponse } from '../utils/DecodePromptResponse'
 
 export default function ApiTestForm() {
   const [name, setName] = useState('')
@@ -28,6 +30,7 @@ export default function ApiTestForm() {
     console.log(documentNumber);
     
     e.preventDefault()
+    //Obtain the financial user data from the API
     if(!documentNumber) {
       setResponseReport('Document number is required')
       return
@@ -42,7 +45,19 @@ export default function ApiTestForm() {
 
     const data = await res.json()
     console.log(data);
+    const stringifiedData = JSON.stringify(data)
+    console.log(stringifiedData);
+
     
+    //Function to create the prompt for the CHATGPT API
+    const newPrompt = promptCreator(stringifiedData);
+    console.log('newprompt is ', newPrompt);
+    
+
+    //Funcion to decode the response from the prompt
+    //TODO - instead of null, use the response from the CHATGPT API 
+    const responseValues = decodePromptResponse(null);
+    console.log('response with values is', responseValues);
   }
 
   return (
