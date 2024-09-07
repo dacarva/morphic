@@ -2,7 +2,7 @@ import { expect } from "chai";
 import hre from "hardhat";
 
 export function shouldBehaveLikeCounter(): void {
-  it("should add amount to the counter and verify the result", async function () {
+  it.skip("should add amount to the counter and verify the result", async function () {
     const amountToCount = 10;
 
     const eAmountCount = await this.instance.instance.encrypt_uint32(

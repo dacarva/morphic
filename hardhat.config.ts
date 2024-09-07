@@ -40,7 +40,16 @@ if (!keys) {
 
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.25",
+  solidity: {
+    version: "0.8.25",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      },
+      viaIR: true  // Enable the IR optimization to work around the "Stack too deep" error
+    }
+  },
   // Optional: defaultNetwork is already being set to "localfhenix" by fhenix-hardhat-plugin
   defaultNetwork: "localfhenix",
   networks: {
