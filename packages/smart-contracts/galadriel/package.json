@@ -2,7 +2,8 @@
   "name": "galadriel",
   "packageManager": "yarn@4.4.1",
   "scripts": {
-    "deployQuickstart": "yarn hardhat run scripts/deployQuickstart.ts --network galadriel"
+    "deployQuickstart": "yarn hardhat run scripts/deployQuickstart.ts --network galadriel",
+    "callQuickstart": "yarn hardhat run scripts/callQuickstart.ts --network galadriel"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
