@@ -96,6 +96,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@google/generative-ai@npm:^0.17.1":
+  version: 0.17.1
+  resolution: "@google/generative-ai@npm:0.17.1"
+  checksum: 10c0/129613c5c633ace11a00b1e300b85afa645ebf67ae473b3fcc0132bf93fa4495d8f35d0f4d524af61622e065e3d5799c7fd4fdec9a5009ef431de7b3c8aa5522
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -3048,6 +3055,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "morphic@workspace:."
   dependencies:
+    "@google/generative-ai": "npm:^0.17.1"
     "@types/eslint": "npm:^9"
     "@typescript-eslint/eslint-plugin": "npm:^8.3.0"
     eslint: "npm:^9.9.1"
