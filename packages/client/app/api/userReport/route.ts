@@ -19,9 +19,10 @@ export async function POST(request: Request) {
     let baseCreditHistoryLength = 10
 
     for (let i = 0; i < numSamples; i++) {
-      const income = baseIncome + i * 500 + Math.random() * 1000 - 500 
+      const income = baseIncome + i * 500 + Math.random() * 1000 - 500
       const dti = baseDTI + i * 0.6 + Math.random() * 1 - 0.5
-      const creditHistoryLength = baseCreditHistoryLength + i + Math.random() * 2 - 1
+      const creditHistoryLength =
+        baseCreditHistoryLength + i + Math.random() * 2 - 1
 
       // based on ----> Credit Score=486.72+2.98×Income+0.36×DTI+1.26×Credit History Length
       const creditScore =
@@ -32,7 +33,7 @@ export async function POST(request: Request) {
 
       data.push({
         date: currentDate.toISOString(),
-        income: Math.round(income * 100) / 100, 
+        income: Math.round(income * 100) / 100,
         dti: Math.round(dti * 100) / 100,
         creditHistoryLength: Math.round(creditHistoryLength * 100) / 100,
         creditScore: Math.round(creditScore * 100) / 100, //Just for testing purposes, and to calibrate, we shouldnt return it

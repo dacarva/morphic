@@ -35,8 +35,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     web3AuthNetwork: WEB3AUTH_NETWORK.SAPPHIRE_DEVNET,
     uiConfig: {
       appName: name,
-      loginMethodsOrder: ["google", "github"],
-    }
+      loginMethodsOrder: ['google', 'github'],
+    },
   })
 
   const queryClient = new QueryClient()
