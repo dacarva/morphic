@@ -46,3 +46,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+.gradient {
+  background-image: radial-gradient(
+      49% 81% at 45% 47%,
+      #2c629845 0%,
+      #073aff00 100%
+    ),
+    radial-gradient(113% 91% at 17% -2%, #0f0d2bff 39%, #ff000000 99%),
+    radial-gradient(142% 91% at 111% 84%, #05050eff 91%, #1e3496ff 100%);
+}
