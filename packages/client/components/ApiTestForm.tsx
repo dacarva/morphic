@@ -1,8 +1,8 @@
 'use client'
 
+import { decodePromptResponse } from '@/app/utils/DecodePromptResponse'
+import { promptCreator } from '@/app/utils/PromptCreator'
 import { Fragment, useState } from 'react'
-import { promptCreator } from '../utils/PromptCreator'
-import { decodePromptResponse } from '../utils/DecodePromptResponse'
 
 export default function ApiTestForm() {
   const [name, setName] = useState('')
